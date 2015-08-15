@@ -14,6 +14,7 @@
 		3D42460F1B7FCA4D00DB2012 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D42460E1B7FCA4D00DB2012 /* Images.xcassets */; };
 		3D4246121B7FCA4D00DB2012 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D4246101B7FCA4D00DB2012 /* LaunchScreen.xib */; };
 		3D42461E1B7FCA4D00DB2012 /* LoginAnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D42461D1B7FCA4D00DB2012 /* LoginAnimationDemoTests.m */; };
+		3D4246291B7FCA6600DB2012 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4246281B7FCA6600DB2012 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		3D4246171B7FCA4D00DB2012 /* LoginAnimationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginAnimationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D42461C1B7FCA4D00DB2012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D42461D1B7FCA4D00DB2012 /* LoginAnimationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginAnimationDemoTests.m; sourceTree = "<group>"; };
+		3D4246271B7FCA6600DB2012 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3D4246281B7FCA6600DB2012 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		3D4246001B7FCA4D00DB2012 /* LoginAnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3D4246271B7FCA6600DB2012 /* LoginViewController.h */,
+				3D4246281B7FCA6600DB2012 /* LoginViewController.m */,
 				3D4246051B7FCA4D00DB2012 /* AppDelegate.h */,
 				3D4246061B7FCA4D00DB2012 /* AppDelegate.m */,
 				3D4246081B7FCA4D00DB2012 /* ViewController.h */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4246291B7FCA6600DB2012 /* LoginViewController.m in Sources */,
 				3D42460A1B7FCA4D00DB2012 /* ViewController.m in Sources */,
 				3D4246071B7FCA4D00DB2012 /* AppDelegate.m in Sources */,
 				3D4246041B7FCA4D00DB2012 /* main.m in Sources */,
