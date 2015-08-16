@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bubble8;
 @property (weak, nonatomic) IBOutlet UIImageView *dot;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 @end
 
@@ -41,6 +43,31 @@
     //move the dot and logo out view
     self.logo.center=CGPointMake(self.logo.center.x-self.view.bounds.size.width, self.logo.center.y);
     self.dot.center=CGPointMake(self.dot.center.x-self.view.bounds.size.width, self.dot.center.y);
+    
+    //set padding for text field in its own bg
+    UIView *userNamePaddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
+    self.userName.leftView=userNamePaddingView;
+    self.userName.leftViewMode=UITextFieldViewModeAlways;
+    
+    UIView *passwordPaddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
+    self.password.leftView=passwordPaddingView;
+    self.password.leftViewMode=UITextFieldViewModeAlways;
+    
+    //set text field icon in text field as a subView so they can move as one block
+    UIImageView *userNameImageView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"username_img.png"]];
+    CGRect userNameFrame=CGRectZero;
+    userNameFrame.size=CGSizeMake(userNameImageView.frame.size.width, userNameImageView.frame.size.height);
+    userNameFrame.origin=CGPointMake(13, 10);
+    [userNameImageView setFrame:userNameFrame];
+    [self.userName addSubview:userNameImageView];
+    
+    UIImageView *passwordImageView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"password_img.png"]];
+    CGRect passwordFrame=CGRectZero;
+    passwordFrame.size=CGSizeMake(passwordImageView.frame.size.width, passwordImageView.frame.size.height);
+    passwordFrame.origin=CGPointMake(12, 9);
+    [passwordImageView setFrame:passwordFrame];
+    [self.password addSubview:passwordImageView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,13 +111,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
