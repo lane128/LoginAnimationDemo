@@ -145,24 +145,38 @@
 - (IBAction)loginTapped:(id)sender {
     //alloc and init a spinner
     UIActivityIndicatorView *spinner=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    
     //set color for spinner
     [spinner setColor:[UIColor grayColor]];
+    
     //set frame for spinner
     CGRect spinnerFrame=CGRectZero;
     spinnerFrame.size=CGSizeMake(spinner.frame.size.width, spinner.frame.size.height);
     spinnerFrame.origin=CGPointMake(13, 15);
     [spinner setFrame:spinnerFrame];
+    
     //add spinner in to login button
     [self.loginButton addSubview:spinner];
+    
+    //reset the loginButton position
+    [self.loginButton setFrame:self.loginButtonPosition];
+    
+    //hidden the warningMessage
+    self.warningMessageView.hidden=true;
+    
     //add a animation of shaking
     self.loginButton.center=CGPointMake(self.loginButton.center.x-20, self.loginButton.center.y);
     [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:0 options:UIViewAnimationOptionTransitionNone animations:^{
         self.loginButton.center=CGPointMake(self.loginButton.center.x+20, self.loginButton.center.y);
     } completion:^(BOOL completed){
         [UIView animateWithDuration:0.5 animations:^{
-            self.loginButton.center=CGPointMake(self.loginButton.center.x, self.loginButton.center.y+70);
+            self.loginButton.center=CGPointMake(self.loginButton.center.x, self.loginButton.center.y+100);
         } completion:^(BOOL completed){
-            self.warningMessageView.hidden=false;
+            [UIView transitionWithView:self.warningMessageView duration:0.5 options:UIViewAnimationCurveEaseOut | UIViewAnimationOptionTransitionFlipFromBottom animations:^{
+                self.warningMessageView.hidden=false;
+            } completion:^(BOOL completed){
+                [spinner removeFromSuperview];
+            }];
         }];
     }];
     
