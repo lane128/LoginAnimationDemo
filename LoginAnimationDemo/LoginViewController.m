@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (nonatomic) CGRect loginButtonPosition;
+@property (strong, nonatomic) UIImageView *warningMessageView;
+
 @end
 
 @implementation LoginViewController
@@ -45,6 +48,9 @@
     self.logo.center=CGPointMake(self.logo.center.x-self.view.bounds.size.width, self.logo.center.y);
     self.dot.center=CGPointMake(self.dot.center.x-self.view.bounds.size.width, self.dot.center.y);
     
+   
+    //save the login button position
+    self.loginButtonPosition=self.loginButton.frame;
     //move the text fields and button out view
     self.userName.center=CGPointMake(self.userName.center.x-self.view.bounds.size.width, self.userName.center.y);
     self.password.center=CGPointMake(self.password.center.x-self.view.bounds.size.width, self.password.center.y);
@@ -74,6 +80,13 @@
     [passwordImageView setFrame:passwordFrame];
     [self.password addSubview:passwordImageView];
     
+    //add the warningMessage imageView in to the View
+    self.warningMessageView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"warningMessage.png"]];
+    CGRect warningMessageFrame=CGRectZero;
+    warningMessageFrame=self.loginButtonPosition;
+    [self.warningMessageView setFrame:warningMessageFrame];
+    [self.view addSubview:self.warningMessageView];
+    self.warningMessageView.hidden=true;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,7 +158,13 @@
     self.loginButton.center=CGPointMake(self.loginButton.center.x-20, self.loginButton.center.y);
     [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:0 options:UIViewAnimationOptionTransitionNone animations:^{
         self.loginButton.center=CGPointMake(self.loginButton.center.x+20, self.loginButton.center.y);
-    } completion:nil];
+    } completion:^(BOOL completed){
+        [UIView animateWithDuration:0.5 animations:^{
+            self.loginButton.center=CGPointMake(self.loginButton.center.x, self.loginButton.center.y+70);
+        } completion:^(BOOL completed){
+            self.warningMessageView.hidden=false;
+        }];
+    }];
     
     
     //start the spinner
