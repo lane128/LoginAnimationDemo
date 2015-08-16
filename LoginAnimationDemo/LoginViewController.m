@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
@@ -43,6 +44,11 @@
     //move the dot and logo out view
     self.logo.center=CGPointMake(self.logo.center.x-self.view.bounds.size.width, self.logo.center.y);
     self.dot.center=CGPointMake(self.dot.center.x-self.view.bounds.size.width, self.dot.center.y);
+    
+    //move the text fields and button out view
+    self.userName.center=CGPointMake(self.userName.center.x-self.view.bounds.size.width, self.userName.center.y);
+    self.password.center=CGPointMake(self.password.center.x-self.view.bounds.size.width, self.password.center.y);
+    self.loginButton.center=CGPointMake(self.loginButton.center.x-self.view.bounds.size.width, self.loginButton.center.y);
     
     //set padding for text field in its own bg
     UIView *userNamePaddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
@@ -100,7 +106,7 @@
     } completion:nil];
     
     
-    //set the log animation move to the view
+    //set the log animation of moving to the view
     [UIView animateWithDuration:2 delay:0.9 usingSpringWithDamping:0.7 initialSpringVelocity:1 options:UIViewAnimationOptionTransitionNone animations:^{
         self.logo.center=CGPointMake(self.logo.center.x+self.view.bounds.size.width, self.logo.center.y);
     } completion:nil];
@@ -108,9 +114,22 @@
     [UIView animateWithDuration:3 delay:0.9 usingSpringWithDamping:0.3 initialSpringVelocity:2 options:UIViewAnimationOptionTransitionNone animations:^{
         self.dot.center=CGPointMake(self.dot.center.x+self.view.bounds.size.width, self.dot.center.y);
     } completion:nil];
+    
+    //set the text fields and button animation of moving to the view
+    [UIView animateWithDuration:1 delay:0.9 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.userName.center=CGPointMake(self.userName.center.x+self.view.bounds.size.width, self.userName.center.y);
+    } completion:nil];
+    
+    [UIView animateWithDuration:1 delay:1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.password.center=CGPointMake(self.password.center.x+self.view.bounds.size.width, self.password.center.y);
+    } completion:nil];
+    
+    [UIView animateWithDuration:1 delay:1.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.loginButton.center=CGPointMake(self.loginButton.center.x+self.view.bounds.size.width, self.loginButton.center.y);
+    } completion:nil];
 }
 
-/*
+/*.
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
