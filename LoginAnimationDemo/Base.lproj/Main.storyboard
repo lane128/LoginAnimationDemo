@@ -62,11 +62,11 @@
                                 <rect key="frame" x="20" y="331" width="153" height="153"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="056DD38C-5E2D-44F2-A718-03F8F3F35F8E" id="VTW-U0-V62">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="5070FB3F-70C9-49CE-AA83-02D17F787A97" id="VTW-U0-V62">
                                 <rect key="frame" x="33" y="232" width="19" height="20"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="608C1336-0A41-4253-94D2-98691C55C251" id="iyT-s2-lld">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="960917C5-8620-47F5-97DC-7D9D124A5E26" id="iyT-s2-lld">
                                 <rect key="frame" x="33" y="303" width="22" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
@@ -84,6 +84,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SOm-Pu-3eB"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" minimumFontSize="17" background="text_label_bg" id="9XT-lx-cJn">
                                 <rect key="frame" x="28" y="222" width="321" height="40"/>
@@ -117,7 +120,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="056DD38C-5E2D-44F2-A718-03F8F3F35F8E" width="19" height="20">
+        <image name="5070FB3F-70C9-49CE-AA83-02D17F787A97" width="19" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -212,7 +215,7 @@ AKIApACmAKgArQDEAMYAyBPKE88T2hPjE/YT+hQNFBgUIRQmFC4UMRQ2FEUUSRRQFFgUZRRqFGwUbhRz
 FHsUfhSDFIsUjhSgFKMUqAAAAAAAAAIBAAAAAAAAAD8AAAAAAAAAAAAAAAAAABSqA
 </mutableData>
         </image>
-        <image name="608C1336-0A41-4253-94D2-98691C55C251" width="22" height="21">
+        <image name="960917C5-8620-47F5-97DC-7D9D124A5E26" width="22" height="21">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

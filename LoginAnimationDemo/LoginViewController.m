@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-//imageView connected
+//elements connected
 @property (weak, nonatomic) IBOutlet UIImageView *bubble1;
 @property (weak, nonatomic) IBOutlet UIImageView *bubble2;
 @property (weak, nonatomic) IBOutlet UIImageView *bubble3;
@@ -23,10 +23,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-
 @end
 
 @implementation LoginViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -127,6 +127,29 @@
     [UIView animateWithDuration:1 delay:1.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.loginButton.center=CGPointMake(self.loginButton.center.x+self.view.bounds.size.width, self.loginButton.center.y);
     } completion:nil];
+}
+
+- (IBAction)loginTapped:(id)sender {
+    //alloc and init a spinner
+    UIActivityIndicatorView *spinner=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //set color for spinner
+    [spinner setColor:[UIColor grayColor]];
+    //set frame for spinner
+    CGRect spinnerFrame=CGRectZero;
+    spinnerFrame.size=CGSizeMake(spinner.frame.size.width, spinner.frame.size.height);
+    spinnerFrame.origin=CGPointMake(13, 15);
+    [spinner setFrame:spinnerFrame];
+    //add spinner in to login button
+    [self.loginButton addSubview:spinner];
+    //add a animation of shaking
+    self.loginButton.center=CGPointMake(self.loginButton.center.x-20, self.loginButton.center.y);
+    [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        self.loginButton.center=CGPointMake(self.loginButton.center.x+20, self.loginButton.center.y);
+    } completion:nil];
+    
+    
+    //start the spinner
+    [spinner startAnimating];
 }
 
 /*.
